@@ -27,11 +27,11 @@ var questions = [{
         return (!picked.allGuessed() && guessesLeft > 0);
     }
 },
-// reference of professor falcon is from the film war games in the 80s
+
 {
     type: 'confirm',
     name: 'playAgain',
-    message: 'Do you want to play again professor falcon?',
+    message: 'Do you want to play again?',
 
     when: function () {
         return (picked.allGuessed() || guessesLeft <= 0);
