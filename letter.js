@@ -1,21 +1,18 @@
-function letter(value) {
-    this.letter = value;
+var Letter = function (character) {
+
+    this.character = character;
+
     this.guessed = false;
 
-    this.toString = function() {
-        if (this.letter === " ") {
+    this.toString = function () {
+        return this.guessed ? this.character : '_';
+    }
+
+    this.makeGuess = function (newGuess) {
+        if (this.character.toLowerCase() === newGuess.toLowerCase()) {
             this.guessed = true;
-            return " ";
-        }   else {
-            return this.letter;
         }
     }
-};
+}
 
-this.guess = function(guess) {
-    if (guess === this.letter) {
-        this.guessed = true;
-    }
-};
-
-module.exports = Letter; 
+module.exports = Letter;
